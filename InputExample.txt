@@ -1,0 +1,23 @@
+«начение величины a равно #variable1#. Ќайдите значение величины b после исполнени€ серии команд:
+if a>5 then b:=a-5 else b:=a*2;
+
+	public static int GetResult(List<int> variables)
+        {
+            int a = variables[0];
+            int b;
+            
+            if (a>5) b = a - 5;
+            else b=a*2;
+            
+            return b;
+        }
+        
+        public static List<int> GetRandomData()
+        {
+            var variables = new List<int>();
+            var random=new Random();
+            variables.Add(random.Next(50));
+            
+            return variables;
+        }
+
