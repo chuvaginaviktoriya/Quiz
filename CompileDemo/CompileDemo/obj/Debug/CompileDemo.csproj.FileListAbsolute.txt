@@ -1,0 +1,10 @@
+C:\Users\Валера\source\repos\CompileDemo\CompileDemo\bin\Debug\CompileDemo.exe.config
+C:\Users\Валера\source\repos\CompileDemo\CompileDemo\bin\Debug\CompileDemo.exe
+C:\Users\Валера\source\repos\CompileDemo\CompileDemo\bin\Debug\CompileDemo.pdb
+C:\Users\Валера\source\repos\CompileDemo\CompileDemo\obj\Debug\CompileDemo.csprojAssemblyReference.cache
+C:\Users\Валера\source\repos\CompileDemo\CompileDemo\obj\Debug\CompileDemo.Form1.resources
+C:\Users\Валера\source\repos\CompileDemo\CompileDemo\obj\Debug\CompileDemo.Properties.Resources.resources
+C:\Users\Валера\source\repos\CompileDemo\CompileDemo\obj\Debug\CompileDemo.csproj.GenerateResource.cache
+C:\Users\Валера\source\repos\CompileDemo\CompileDemo\obj\Debug\CompileDemo.csproj.CoreCompileInputs.cache
+C:\Users\Валера\source\repos\CompileDemo\CompileDemo\obj\Debug\CompileDemo.exe
+C:\Users\Валера\source\repos\CompileDemo\CompileDemo\obj\Debug\CompileDemo.pdb
