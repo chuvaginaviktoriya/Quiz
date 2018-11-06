@@ -1,0 +1,15 @@
+using System.IO;
+using System;
+
+public class Condition
+{
+        public int UseIf(int a)
+        {
+            int b;
+            
+            if (a>5) b = a - 5;
+            else b=a*2;
+            
+            return b;               
+         }
+}
