@@ -19,7 +19,6 @@ namespace CodeExecution
 
         public string GetSolution(object[] input)
         {
-
             string output;
             var compiler = CodeDomProvider.CreateProvider("CSharp");
             var parameters = new CompilerParameters
@@ -32,11 +31,7 @@ namespace CodeExecution
 
             if (!results.Errors.HasErrors)
             {
-                var assembly = results.CompiledAssembly;
-                var evaluatorType = assembly.GetType(_typeName);
-                var evaluator = Activator.CreateInstance(evaluatorType);
-
-                output = InvokeMethod(evaluatorType, _methodName, evaluator, input).ToString();
+                output = InvokeMethod(results, input).ToString();
                 return output;
             }
 
@@ -44,9 +39,12 @@ namespace CodeExecution
             return results.Errors.Cast<CompilerError>().Aggregate(output, (current, ce) => current + string.Format(Environment.NewLine + "line{0}: {1}", ce.Line, ce.ErrorText));
         }
 
-        private object InvokeMethod(Type evaluatorType, string methodName, object evaluator, object[] methodParams)
+        private object InvokeMethod(CompilerResults results, object [] input)
         {
-            return evaluatorType.InvokeMember(methodName, System.Reflection.BindingFlags.InvokeMethod, null, evaluator, methodParams);
+            var assembly = results.CompiledAssembly;
+            var evaluatorType = assembly.GetType(_typeName);
+            var evaluator = Activator.CreateInstance(evaluatorType);
+            return evaluatorType.InvokeMember(_methodName, System.Reflection.BindingFlags.InvokeMethod, null, evaluator, input);
         }
     }
 }

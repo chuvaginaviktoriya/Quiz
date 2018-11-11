@@ -101,6 +101,28 @@ namespace CodeExecution.Test
             Xunit.Assert.Equal(expected, actual);
         }
 
+        [Theory]
+        [InlineData("word", 0, 'w')]
+        [InlineData("Word", 1, 'o')]
+        [InlineData("WORD", 3, 'D')]
+        public void MethodWithDifferentDataType_SuccessfulExecution(string word, int index, char expected)
+        {
+            var func =
+                @"public class StringOperations
+                {
+                    public char CharAt(string word, int index)
+                    {                       
+                        return word[index];
+                    }
+                }";
+            var inputArray = new object[] { word, index };
+
+            var code = new Code("StringOperations", "CharAt", func);
+            var actual = code.GetSolution(inputArray);
+
+            Xunit.Assert.Equal(expected.ToString(), actual);
+        }
+
         [Fact]
         public void UsingOneCodeMoreThanOneTime_SuccessulExecution()
         {
