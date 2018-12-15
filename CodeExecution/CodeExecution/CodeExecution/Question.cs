@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace CodeExecution
 {
@@ -18,9 +19,10 @@ namespace CodeExecution
         public void GenerateInputs()
         {
             var inputs = new List<object>();
+            var randomizer = new Random();
 
             foreach (var limit in _limits)
-                inputs.Add(IntRandomizer.Randomize(limit.Min, limit.Max));
+                inputs.Add(randomizer.Next(limit.Min, limit.Max));
 
             InputData = inputs.ToArray();
         }

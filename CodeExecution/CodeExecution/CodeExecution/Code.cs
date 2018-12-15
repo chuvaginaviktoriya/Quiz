@@ -2,18 +2,17 @@
 using System.CodeDom.Compiler;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 
 namespace CodeExecution
 {
     public class Code
     {
-        private const string _usings = @"using System.Collections.Generic;         
-            using System;
-            using System.IO;
-            using System.Linq;
-            using System.Numerics;
-";
+         private const string _usings = @"using System.Collections.Generic;         
+             using System;
+             using System.IO;
+             using System.Linq;
+             using System.Numerics;
+ ";
 
         private int _usingsCount = _usings.Split('\n').Count() - 1;
         private string _typeName = "Execution"; 
@@ -33,7 +32,7 @@ namespace CodeExecution
             if (_compilerResults.Errors.HasErrors)
                 return GetErrorsList(_compilerResults);
 
-            return InvokeMethod(input).ToString();
+            return InvokeStaticMethod(input).ToString();
         }
 
         private CompilerResults CompileSourceCode()
@@ -70,18 +69,18 @@ namespace CodeExecution
         private string GetErrorsList(CompilerResults results)
         {
             var output = Environment.NewLine + "Problems at compile time!";
+
             return results.Errors.Cast<CompilerError>().Aggregate(output, (current, ce) =>
             current + string.Format(Environment.NewLine + "line{0}: {1}", ce.Line - _usingsCount, ce.ErrorText));
         }
 
-        private object InvokeMethod(object [] input)
+        public object InvokeStaticMethod(object[] parameters)
         {
             var assembly = _compilerResults.CompiledAssembly;
-            var evaluatorType = assembly.GetType(_typeName);
-            var evaluator = Activator.CreateInstance(evaluatorType);
+            var type = assembly.GetType(_typeName);
+            var method = type.GetMethod(_methodName);
 
-            return evaluatorType.InvokeMember(_methodName, BindingFlags.InvokeMethod, null, evaluator, input);
+            return method.Invoke(null, parameters);
         }
-
     }
 }

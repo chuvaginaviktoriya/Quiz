@@ -27,7 +27,7 @@ namespace ConsoleExecutionFromFile
                 sourceCode = sr.ReadToEnd();
             }
 
-            var limit = new Limit(7, 100);
+            var limit = new Limit(7, 20);
             var limits = new Limit[] {limit};
 
             var question = new Question(sourceCode, limits);

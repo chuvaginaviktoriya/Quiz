@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using Xunit;
 
 namespace CodeExecution.Test
@@ -16,9 +15,9 @@ namespace CodeExecution.Test
         public void MethodWithOneInput_SuccessfulExecution(int a, int expected)
         {
             var func =
-                @"public class Execution
+                @"public static class Execution
                   {
-                    public int Main(int a)
+                    public static int Main(int a)
                     {
                         return a+10;
                     }
@@ -38,9 +37,9 @@ namespace CodeExecution.Test
         public void MethodWithTwoInputs_SuccessfulExecution(int a, int b, int expected)
         {
             var func =
-                @"public class Execution
+                @"public static class Execution
                   {
-                    public int Main(int a, int b)
+                    public static int Main(int a, int b)
                     {
                         return a+b;
                     }
@@ -61,9 +60,9 @@ namespace CodeExecution.Test
         public void MethodWithArrayInput_SuccessfulExecution(int [] array, int expected)
         {
             var func =
-                @"public class Execution
+                @"public static class Execution
                   {
-                    public int Main(int [] array)
+                    public static int Main(int [] array)
                     {
                         var result = 0;
                         foreach (var item in array)
@@ -85,9 +84,10 @@ namespace CodeExecution.Test
             var array = new string[] { "111", "22", "3333", "4" };
             var expected = "3333";
             var func =
-                @"public class Execution
+                @"
+                  public static class Execution
                   {
-                    public string Main(string[] array)
+                    public static string Main(string[] array)
                     {
                         var list = new List<string> (array);
                         return list[2];
@@ -109,9 +109,9 @@ namespace CodeExecution.Test
         public void MethodWithStringData_SuccessfulExecution(string word, string expected)
         {
             var func =
-                @"public class Execution
+                @"public static class Execution
                   {
-                    public string Main(string word)
+                    public static string Main(string word)
                     {                       
                         return word.ToUpper();
                     }
@@ -131,9 +131,9 @@ namespace CodeExecution.Test
         public void MethodWithDifferentDataTypes_SuccessfulExecution(string word, int index, char expected)
         {
             var func =
-                @"public class Execution
+                @"public static class Execution
                   {
-                    public char Main(string word, int index)
+                    public static char Main(string word, int index)
                     {                       
                         return word[index];
                     }
@@ -151,16 +151,17 @@ namespace CodeExecution.Test
         {
             var expected = "A";
             var func =
-                @"public class Execution
+                @"public static class Execution
                   {
-                    public char Main(int[] users)
+                    public static char Main(int[] users)
                     {
-                        var constructed = new BigInteger(3535);
+                        var list = new List<int> (users);
+                        list.OrderBy(a=>a);
                         return 'A';
                     }
                   }";
 
-            var inputArray = new object[] { new object[] {1,2} };
+            var inputArray = new object[] { new int[] {1,2} };
 
             var code = new Code(func);
             var actual = code.GetSolution(inputArray);
@@ -172,9 +173,9 @@ namespace CodeExecution.Test
         public void MethodWithException_TargetInvocationException()
         {
             var func =
-                @"public class Execution
+                @"public static class Execution
                   {
-                    public char Main(string word, int index)
+                    public static char Main(string word, int index)
                     {                       
                         return word[index];
                     }
@@ -192,9 +193,9 @@ namespace CodeExecution.Test
         public void UsingOneCodeMoreThanOneTime_SuccessulExecution()
         {
             var func =
-                @"public class Execution
+                @"public static class Execution
                   {
-                    public int Main(int a, int b)
+                    public static int Main(int a, int b)
                     {
                         return a+b;
                     }
@@ -208,30 +209,6 @@ namespace CodeExecution.Test
 
             Xunit.Assert.Equal("3", firstActual);
             Xunit.Assert.Equal("13", secondActual);
-        }
-
-        [Fact]
-        public void MethodWithCompileErrors_ExceptionMessage()
-        {
-            var func =
-                @"public class Execution
-                  {
-                    public int Main(int a, int b)
-                    {+ 
-                        return a+b;
-                    }
-                  }";
-
-            var inputArray = new object[] { 1, 2 };
-            var expected = Environment.NewLine+ "Problems at compile time!"+
-            Environment.NewLine + @"line5: Недопустимый терм ""return"" в выражении";
-
-            var code = new Code(func);
-            var actual = code.GetSolution(inputArray);
-
-            Xunit.Assert.Equal(expected, actual);
-        }
-
-       
+        }      
     }
 }
