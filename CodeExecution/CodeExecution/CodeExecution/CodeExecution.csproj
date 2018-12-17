@@ -43,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code.cs" />
+    <Compile Include="CodeCreation.cs" />
     <Compile Include="Limits.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuastionCreation.cs" />
     <Compile Include="Question.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

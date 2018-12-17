@@ -30,7 +30,15 @@ namespace ConsoleExecutionFromFile
             var limit = new Limit(7, 20);
             var limits = new Limit[] {limit};
 
-            var question = new Question(sourceCode, limits);
+            Question question;
+            if (!QuastionCreation.TryCreateQuestion(sourceCode, limits, out question))
+            {
+                Console.WriteLine(CodeCreation.LastErrors);
+                Console.ReadLine();
+
+                return;
+            }
+
             question.GenerateInputs();
             question.Solve();
 

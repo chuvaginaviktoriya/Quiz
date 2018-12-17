@@ -10,9 +10,9 @@ namespace CodeExecution
         public List<object> InputData { get; private set; }
         public string Answer { get; private set; }
 
-        public Question(string code, Limit [] limits)
+        public Question(Code code, Limit [] limits)
         {
-            _code = new Code(code);
+            _code = code;
             _limits = limits;
         }
 

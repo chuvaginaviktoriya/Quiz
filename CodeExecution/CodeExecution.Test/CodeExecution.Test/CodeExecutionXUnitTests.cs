@@ -24,7 +24,9 @@ namespace CodeExecution.Test
                   }";
             var inputArray = new object[] { a };
 
-            var code = new Code(func);
+            Code code;
+            CodeCreation.CreateCode(func, out code);
+
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected.ToString(), actual);
@@ -52,7 +54,8 @@ namespace CodeExecution.Test
                 }";
             var inputArray = new object[] { x };
 
-            var code = new Code(func);
+            Code code;
+            CodeCreation.CreateCode(func, out code);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected.ToString(), actual);
@@ -74,7 +77,8 @@ namespace CodeExecution.Test
                   }";
             var inputArray = new object[] { a, b };
 
-            var code = new Code(func);
+            Code code;
+            CodeCreation.CreateCode(func, out code);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected.ToString(), actual);
@@ -100,7 +104,8 @@ namespace CodeExecution.Test
                   }";
             var inputArray = new object[] { array };
 
-            var code = new Code(func);
+            Code code;
+            CodeCreation.CreateCode(func, out code);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected.ToString(), actual);
@@ -122,8 +127,9 @@ namespace CodeExecution.Test
                     }
                   }";
             var inputArray = new object[] { array };
-            
-            var code = new Code(func);
+
+            Code code;
+            CodeCreation.CreateCode(func, out code);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected, actual);
@@ -167,7 +173,8 @@ namespace CodeExecution.Test
                   }";
             var inputArray = new object[] { array };
 
-            var code = new Code(func);
+            Code code;
+            CodeCreation.CreateCode(func, out code);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected.ToString(), actual);
@@ -190,7 +197,8 @@ namespace CodeExecution.Test
                   }";
             var inputArray = new object[] { word };
 
-            var code = new Code(func);
+            Code code;
+            CodeCreation.CreateCode(func, out code);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected, actual);
@@ -212,7 +220,8 @@ namespace CodeExecution.Test
                   }";
             var inputArray = new object[] { word, index };
 
-            var code = new Code(func);
+            Code code;
+            CodeCreation.CreateCode(func, out code);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected.ToString(), actual);
@@ -235,7 +244,8 @@ namespace CodeExecution.Test
 
             var inputArray = new object[] { new int[] {1,2} };
 
-            var code = new Code(func);
+            Code code;
+            CodeCreation.CreateCode(func, out code);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected, actual);
@@ -259,14 +269,15 @@ namespace CodeExecution.Test
 
             var inputArray = new object[] { new int[] { 1, 2 } };
 
-            var code = new Code(func);
+            Code code;
+            CodeCreation.CreateCode(func, out code);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected, actual);
         }
 
         [Fact]
-        public void MethodWithException_TargetInvocationException()
+        public void MethodWithExeptiomMessageInInvokation_ExeptionMessage()
         {
             var func =
                 @"public static class Execution
@@ -277,11 +288,36 @@ namespace CodeExecution.Test
                     }
                   }";
             var inputArray = new object[] { "word", 4 };
+            var expected = "Адресат вызова создал исключение.";
 
-            var code = new Code(func);
+            Code code;
+            CodeCreation.CreateCode(func, out code);
+            var actual = code.GetSolution(inputArray);
 
-            Xunit.Assert.Throws<System.Reflection.TargetInvocationException>(
-            () => code.GetSolution(inputArray));
+            Xunit.Assert.Equal(expected, actual);
+
+        }
+
+        [Fact]
+        public void MethodWithWrongInputParamsAmount_ExeptionMessage()
+        {
+            var func =
+                @"public static class Execution
+                  {
+                    public static char Main(string word, int index)
+                    {                       
+                        return word[index];
+                    }
+                  }";
+            var inputArray = new object[] { "word", 4, 2 };
+            var expected = "Несоответствие числа параметров.";
+
+            Code code;
+            CodeCreation.CreateCode(func, out code);
+            var actual = code.GetSolution(inputArray);
+
+            Xunit.Assert.Equal(expected, actual);
+
         }
 
 
@@ -299,7 +335,8 @@ namespace CodeExecution.Test
             var firstInputArray = new object[] { 1, 2 };
             var secondInputArray = new object[] { 4, 9 };
 
-            var code = new Code(func);     
+            Code code;
+            CodeCreation.CreateCode(func, out code);
             var firstActual = code.GetSolution(firstInputArray);
             var secondActual = code.GetSolution(secondInputArray);
 
