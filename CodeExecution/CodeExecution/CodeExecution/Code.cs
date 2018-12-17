@@ -24,7 +24,7 @@ namespace CodeExecution
         {
             _sourceCode = _usings;
             _sourceCode += sourceCode;
-            _compilerResults = CompileSourceCode();         
+            _compilerResults = CompileSourceCode();
         }
 
         public string GetSolution(object[] input)
@@ -37,7 +37,7 @@ namespace CodeExecution
 
         private CompilerResults CompileSourceCode()
         {
-            var compiler = CodeDomProvider.CreateProvider("CSharp");
+            var compiler = new Microsoft.CSharp.CSharpCodeProvider();
             var parameters = GetParameters();
 
             return compiler.CompileAssemblyFromSource(parameters, _sourceCode);
@@ -49,17 +49,16 @@ namespace CodeExecution
             {
                 IncludeDebugInformation = true
             };
-            string currentDirrectory = Directory.GetCurrentDirectory();
 
-            if (Directory.Exists(currentDirrectory + "\\Assemblies"))
+             string currentDirrectory = Directory.GetCurrentDirectory();
+
+           if (Directory.Exists(currentDirrectory + "\\Assemblies"))
             {
                 string[] paths = Directory.GetFiles(currentDirrectory+"\\Assemblies");
 
                 foreach (var path in paths)
                     if (path.IndexOf(".dll") != -1)
-                    {
-                        parameters.ReferencedAssemblies.Add(path);
-                    }
+                        parameters.ReferencedAssemblies.Add(path);             
             }
 
             return parameters;
@@ -69,9 +68,12 @@ namespace CodeExecution
         private string GetErrorsList(CompilerResults results)
         {
             var output = Environment.NewLine + "Problems at compile time!";
+            var compilerErrorList = results.Errors.Cast<CompilerError>();
 
-            return results.Errors.Cast<CompilerError>().Aggregate(output, (current, ce) =>
-            current + string.Format(Environment.NewLine + "line{0}: {1}", ce.Line - _usingsCount, ce.ErrorText));
+            foreach (var compilerError in compilerErrorList)
+                output += string.Format(Environment.NewLine + "line{0}: {1}", compilerError.Line - _usingsCount, compilerError.ErrorText);
+
+            return output;
         }
 
         public object InvokeStaticMethod(object[] parameters)

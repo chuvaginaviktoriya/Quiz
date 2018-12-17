@@ -7,7 +7,7 @@ namespace CodeExecution
     {
         private Code _code;
         private Limit[] _limits;
-        public object[] InputData { get; private set; }
+        public List<object> InputData { get; private set; }
         public string Answer { get; private set; }
 
         public Question(string code, Limit [] limits)
@@ -24,12 +24,12 @@ namespace CodeExecution
             foreach (var limit in _limits)
                 inputs.Add(randomizer.Next(limit.Min, limit.Max));
 
-            InputData = inputs.ToArray();
+            InputData = inputs;
         }
 
         public void Solve()
         {
-            Answer = _code.GetSolution(InputData);
+            Answer = _code.GetSolution(InputData.ToArray());
         }
     }
   

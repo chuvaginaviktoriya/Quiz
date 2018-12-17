@@ -31,6 +31,34 @@ namespace CodeExecution.Test
         }
 
         [Theory]
+        [InlineData(2, 1)]
+        [InlineData(5, 5)]
+        [InlineData(10, 55)]
+        public void MethodInvokingPrivateMethod_SuccessfulExecution(int x, int expected)
+        {
+            var func =
+                @"public static class Execution
+                  {
+                    public static int Main(int x)
+                    {
+                        return Fibonacci(x);
+                    }
+
+	                private static int Fibonacci(int x)
+	                {
+		                if (x<=1) return x;
+		                return Fibonacci(x-1)+Fibonacci(x-2);
+	                }
+                }";
+            var inputArray = new object[] { x };
+
+            var code = new Code(func);
+            var actual = code.GetSolution(inputArray);
+
+            Xunit.Assert.Equal(expected.ToString(), actual);
+        }
+
+        [Theory]
         [InlineData(1, 2, 3)]
         [InlineData(-5, 2, -3)]
         [InlineData(-5, -2, -7)]
@@ -102,6 +130,50 @@ namespace CodeExecution.Test
         }
 
         [Theory]
+        [InlineData(new int[] { 1, 2 }, 2)]
+        [InlineData(new int[] { 3, 4 }, 4)]
+        [InlineData(new int[] { 2, 4}, 4)]
+        public void MethodWithInstanceOfCustomClass_SuccessfulExecution(int[] array, int expected)
+        {
+            var func =
+                @"
+                  public static class Execution
+                  {
+                    public static int Main(int[] array)
+                    {
+                        var point = new Point(array[0], array[1]);
+                        var reversePoint = point.GetReversePoint();
+
+                        return reversePoint.X;
+                    }
+                  }
+
+                  public class Point
+                  {
+                    public int X;
+                    public int Y;
+                    
+                    public Point(int x, int y)
+                    {
+                       X = x;
+                       Y = y;
+                    }
+
+                    public Point GetReversePoint()
+                    {
+                        var point = new Point(Y,X);
+                        return point;
+                    }
+                  }";
+            var inputArray = new object[] { array };
+
+            var code = new Code(func);
+            var actual = code.GetSolution(inputArray);
+
+            Xunit.Assert.Equal(expected.ToString(), actual);
+        }
+
+        [Theory]
         [InlineData("word","WORD")]
         [InlineData("Word", "WORD")]
         [InlineData("WORD", "WORD")]
@@ -162,6 +234,30 @@ namespace CodeExecution.Test
                   }";
 
             var inputArray = new object[] { new int[] {1,2} };
+
+            var code = new Code(func);
+            var actual = code.GetSolution(inputArray);
+
+            Xunit.Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void MethodWithNumerics_SuccessfulExecution()
+        {
+            var expected = "952";
+            var func =
+                @"public static class Execution
+                  {
+                    public static int Main(int[] users)
+                    {
+                        var bigInt = new BigInteger(934157136952);
+                        var result = (int) (bigInt % 1000);
+
+                        return result;
+                    }
+                  }";
+
+            var inputArray = new object[] { new int[] { 1, 2 } };
 
             var code = new Code(func);
             var actual = code.GetSolution(inputArray);
