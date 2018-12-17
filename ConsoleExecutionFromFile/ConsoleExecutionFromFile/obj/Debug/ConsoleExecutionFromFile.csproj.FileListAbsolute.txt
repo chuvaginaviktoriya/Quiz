@@ -1,0 +1,10 @@
+C:\Users\Валера\Desktop\Диплом Вика\ConsoleExecutionFromFile\ConsoleExecutionFromFile\bin\Debug\ConsoleExecutionFromFile.exe.config
+C:\Users\Валера\Desktop\Диплом Вика\ConsoleExecutionFromFile\ConsoleExecutionFromFile\bin\Debug\ConsoleExecutionFromFile.exe
+C:\Users\Валера\Desktop\Диплом Вика\ConsoleExecutionFromFile\ConsoleExecutionFromFile\bin\Debug\ConsoleExecutionFromFile.pdb
+C:\Users\Валера\Desktop\Диплом Вика\ConsoleExecutionFromFile\ConsoleExecutionFromFile\bin\Debug\CodeExecution.dll
+C:\Users\Валера\Desktop\Диплом Вика\ConsoleExecutionFromFile\ConsoleExecutionFromFile\bin\Debug\CodeExecution.pdb
+C:\Users\Валера\Desktop\Диплом Вика\ConsoleExecutionFromFile\ConsoleExecutionFromFile\obj\Debug\ConsoleExecutionFromFile.csprojAssemblyReference.cache
+C:\Users\Валера\Desktop\Диплом Вика\ConsoleExecutionFromFile\ConsoleExecutionFromFile\obj\Debug\ConsoleExecutionFromFile.csproj.CoreCompileInputs.cache
+C:\Users\Валера\Desktop\Диплом Вика\ConsoleExecutionFromFile\ConsoleExecutionFromFile\obj\Debug\ConsoleExecutionFromFile.csproj.CopyComplete
+C:\Users\Валера\Desktop\Диплом Вика\ConsoleExecutionFromFile\ConsoleExecutionFromFile\obj\Debug\ConsoleExecutionFromFile.exe
+C:\Users\Валера\Desktop\Диплом Вика\ConsoleExecutionFromFile\ConsoleExecutionFromFile\obj\Debug\ConsoleExecutionFromFile.pdb

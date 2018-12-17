@@ -1,0 +1,12 @@
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution\CodeExecution\bin\Debug\CodeExecution.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution\CodeExecution\bin\Debug\CodeExecution.pdb
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution\CodeExecution\obj\Debug\CodeExecution.csprojAssemblyReference.cache
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution\CodeExecution\obj\Debug\CodeExecution.csproj.CoreCompileInputs.cache
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution\CodeExecution\obj\Debug\CodeExecution.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution\CodeExecution\obj\Debug\CodeExecution.pdb
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution\CodeExecution\bin\Debug\CodeExecution.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution\CodeExecution\bin\Debug\CodeExecution.pdb
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution\CodeExecution\obj\Debug\CodeExecution.csproj.CoreCompileInputs.cache
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution\CodeExecution\obj\Debug\CodeExecution.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution\CodeExecution\obj\Debug\CodeExecution.pdb
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution\CodeExecution\obj\Debug\CodeExecution.csprojAssemblyReference.cache

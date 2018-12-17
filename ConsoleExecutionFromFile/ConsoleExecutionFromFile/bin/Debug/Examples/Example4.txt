@@ -1,0 +1,27 @@
+public static class Execution
+{
+	public static int Main(int x)
+	{
+		var y = new BigInteger(934157136952);
+		var point = new Point(x, (int)(y % 100));		
+
+		return point.GetXYProduct();
+	}
+}
+
+public class Point
+{
+	public int X;
+	public int Y;
+                    
+	public Point(int x, int y)
+	{
+		X = x;
+		Y = y;
+	}
+
+	public int GetXYProduct()
+	{	
+		return X*Y;
+	}
+}

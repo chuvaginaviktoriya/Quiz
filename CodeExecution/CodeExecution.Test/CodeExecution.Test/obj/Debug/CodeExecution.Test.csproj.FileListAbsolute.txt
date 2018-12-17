@@ -1,0 +1,58 @@
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.abstractions.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\ru\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\ru\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\ru\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.runner.reporters.net452.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.runner.utility.net452.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\CodeExecution.Test.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\CodeExecution.Test.pdb
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\CodeExecution.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.assert.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.core.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.execution.desktop.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\CodeExecution.pdb
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.assert.xml
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.core.xml
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.execution.desktop.xml
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\obj\Debug\CodeExecution.Test.csprojAssemblyReference.cache
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\obj\Debug\CodeExecution.Test.csproj.CoreCompileInputs.cache
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\obj\Debug\CodeExecution.Test.csproj.CopyComplete
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\obj\Debug\CodeExecution.Test.dll
+C:\Users\Валера\Desktop\Диплом Вика\Новая папка\CodeExecution.Test\CodeExecution.Test\obj\Debug\CodeExecution.Test.pdb
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\ru\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\ru\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\ru\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.runner.reporters.net452.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.runner.utility.net452.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.abstractions.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\CodeExecution.Test.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\CodeExecution.Test.pdb
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\CodeExecution.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.assert.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.core.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.execution.desktop.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\CodeExecution.pdb
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.assert.xml
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.core.xml
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\bin\Debug\xunit.execution.desktop.xml
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\obj\Debug\CodeExecution.Test.csprojAssemblyReference.cache
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\obj\Debug\CodeExecution.Test.csproj.CoreCompileInputs.cache
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\obj\Debug\CodeExecution.Test.csproj.CopyComplete
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\obj\Debug\CodeExecution.Test.dll
+C:\Users\Валера\Desktop\Диплом Вика\CodeExecution\CodeExecution.Test\CodeExecution.Test\obj\Debug\CodeExecution.Test.pdb
