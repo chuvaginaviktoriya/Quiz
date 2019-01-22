@@ -1,5 +1,8 @@
-﻿namespace CodeExecution
+﻿using System;
+
+namespace CodeExecution
 {
+    [Serializable]
     public class Limit
     {
         public int Min { get; private set; }

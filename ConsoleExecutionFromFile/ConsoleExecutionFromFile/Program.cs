@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using CodeExecution;
 
@@ -9,29 +10,50 @@ namespace ConsoleExecutionFromFile
         public static void Main(string[] args)
         {
             string currentDirrectory = Directory.GetCurrentDirectory();
-            string[] paths = Directory.GetFiles(currentDirrectory + "\\Examples");
+            string[] paths = Directory.GetFiles(currentDirrectory + "\\Code");
+            string[] texts = Directory.GetFiles(currentDirrectory + "\\Text");
+            string[] limits = Directory.GetFiles(currentDirrectory + "\\Limits");
 
-            foreach (var path in paths)
-                if (path.IndexOf(".txt") != -1)
-                {
-                    ExecuteFromFile(path);
-                } 
+            for (int i=0; i<paths.Length; i++)            
+                    ExecuteFromFile(paths[i], texts[i], limits[i]);
         }
 
-        private static void ExecuteFromFile(string path)
+        private static List<Limit> GetLimits(string path)
+        {
+            var result = new List<Limit>();
+            string limit;
+            using (StreamReader sr = new StreamReader(path))
+            {
+                limit = sr.ReadToEnd();
+            }
+            var limits = limit.Split();
+            for (int i=0; i<limits.Length/2;i++)
+            {
+                result.Add(new Limit(int.Parse(limits[i * 2]), int.Parse(limits[i * 2 + 1])));
+            }
+
+            return result;
+        }
+
+        private static void ExecuteFromFile(string path, string textPath, string limitsPath)
         {
             string sourceCode;
-            
+            string text;
+
             using (StreamReader sr = new StreamReader(path))
             {
                 sourceCode = sr.ReadToEnd();
             }
 
-            var limit = new Limit(7, 20);
-            var limits = new Limit[] {limit};
+            using (StreamReader sr = new StreamReader(textPath))
+            {
+                text = sr.ReadToEnd();
+            }
+
+            var limits = GetLimits(limitsPath);         
 
             Question question;
-            if (!QuastionCreation.TryCreateQuestion(sourceCode, limits, out question))
+            if (!QuastionCreation.TryCreateQuestion(sourceCode, text, limits, out question))
             {
                 Console.WriteLine(CodeCreation.LastErrors);
                 Console.ReadLine();
@@ -43,7 +65,7 @@ namespace ConsoleExecutionFromFile
             question.Solve();
 
             Console.WriteLine(sourceCode);
-            Console.WriteLine("Input data: " + question.InputData[0]);
+            Console.WriteLine("Statement: " + question.GetStatement());
             Console.WriteLine("Answer: " + question.Answer);
 
             Console.ReadLine();

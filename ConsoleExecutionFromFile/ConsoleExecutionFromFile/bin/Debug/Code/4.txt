@@ -1,0 +1,11 @@
+public static class Execution
+{
+	public static string Main(int a, int b)
+	{
+		var text = "гардемарин";
+		var x = text.Substring(0,a)+text.Substring(text.Length-2,b)+text.Substring(1,1);
+     		
+		return x;
+	}
+}
+	

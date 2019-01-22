@@ -1,0 +1,17 @@
+﻿<Window x:Class="AdminsVersion.SimpleQuestionAddition"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdminsVersion"
+        mc:Ignorable="d"
+        Title="Добавление вопроса" Height="300" Width="800" MinWidth="600" MinHeight="300" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBox Name ="Text" HorizontalAlignment="Center" Height="60" Margin="0,50,0,0" TextWrapping="Wrap" Text="Вопрос" VerticalAlignment="Top" Width="550" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" />
+        <TextBox Name ="Answer" HorizontalAlignment="Center" Height="23" Margin="0,120,0,0" TextWrapping="Wrap" Text="Ответ" VerticalAlignment="Top" Width="550"/>
+        <Button Name ="Add" Content="Создать" HorizontalAlignment="Right" Margin="0,200,250,0" VerticalAlignment="Top" Width="75" Click="Add_Click"/>
+        <Button Name ="Cancel" Content="Отменить" HorizontalAlignment="Right" Margin="0,200,120,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
+        <ComboBox Name="Topics" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" Width="550"/>
+
+    </Grid>
+</Window>

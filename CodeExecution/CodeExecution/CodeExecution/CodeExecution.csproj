@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,12 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnswerChoiceQuestion.cs" />
+    <Compile Include="BinarySaver.cs" />
     <Compile Include="Code.cs" />
     <Compile Include="CodeCreation.cs" />
-    <Compile Include="Limits.cs" />
+    <Compile Include="JSONSaver.cs" />
+    <Compile Include="Limit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuastionCreation.cs" />
+    <Compile Include="ParameterQuestion.cs" />
     <Compile Include="Question.cs" />
+    <Compile Include="SimpleQuestion.cs" />
+    <Compile Include="Statement.cs" />
+    <Compile Include="StatementCreation.cs" />
+    <Compile Include="Topic.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
