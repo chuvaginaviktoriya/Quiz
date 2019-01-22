@@ -13,6 +13,7 @@
         <Button Name="Save" Content="Сохранить" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Center" Width="279" Click="Save_Click"/>
         <Button Name="AddAnswerChoiceQuestion" Content="Добавить вопрос в выбором ответа" HorizontalAlignment="Center" Margin="0,-100,0,0" VerticalAlignment="Center" Width="280" Click="AddAnswerChoiceQuestion_Click"/>
         <Button Name="AddSimpleQuestion" Content="Добавить простой вопрос" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="280" Click="AddSimpleQuestion_Click"/>
+        <Button Name="Update" Content="Обновить вопросы" HorizontalAlignment="Center" Margin="0,300,0,0" VerticalAlignment="Center" Width="279" RenderTransformOrigin="-0.13,0.104" Click="Update_Click"/>
 
     </Grid>
 </Window>

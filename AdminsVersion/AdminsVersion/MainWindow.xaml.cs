@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using CodeExecution;
+using Microsoft.Win32;
 
 namespace AdminsVersion
 {
@@ -66,7 +68,6 @@ namespace AdminsVersion
             {
                 BinarySaver.SaveToBinnary(Topics);
                 MessageBox.Show("Сохранение выполнено");
-
             }
             catch(Exception exception)
             {
@@ -107,6 +108,30 @@ namespace AdminsVersion
                 MessageBox.Show("Вопрос добавлен");
             }
             else MessageBox.Show("Вопрос не добавлен");
+        }
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+
+            try
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                var currentDir = Directory.GetCurrentDirectory();
+                saveFileDialog.InitialDirectory = currentDir;
+                saveFileDialog.OverwritePrompt = true;
+
+                if (saveFileDialog.ShowDialog() == true)
+                {
+                    File.Copy(currentDir + "/questions", saveFileDialog.FileName,true);
+                    MessageBox.Show("Сохранение выполнено");
+                }
+                else MessageBox.Show("Не выбран путь");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+          
         }
     }
 }

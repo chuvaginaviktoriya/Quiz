@@ -51,7 +51,15 @@ namespace Quiz
             string studentsAnswer;
 
             if (_currentQuestion is AnswerChoiceQuestion)
+            {
+                if (Variants.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Не выбран ответ");
+                    return;
+                }
                 studentsAnswer = Variants.Items[Variants.SelectedIndex].ToString();
+            }
+
             else studentsAnswer = StudentsAnswer.Text;
 
             if (correctAnswer == studentsAnswer)
