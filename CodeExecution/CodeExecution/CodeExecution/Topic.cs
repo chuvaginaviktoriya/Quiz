@@ -15,9 +15,8 @@ namespace CodeExecution
         {
             Title = title;
             ParameterQuestions = new List<ParameterQuestion>();
-            SimpleQuestions = new List<SimpleQuestion>();
             AnswerChoiceQuestions = new List<AnswerChoiceQuestion>();
-
+            SimpleQuestions = new List<SimpleQuestion>();
         }
 
         public void AddParameterQuestion(ParameterQuestion question)
@@ -25,14 +24,38 @@ namespace CodeExecution
             ParameterQuestions.Add(question);
         }
 
+        public void AddAnswerChoiceQuestion(AnswerChoiceQuestion question)
+        {
+            AnswerChoiceQuestions.Add(question);
+        }
+
         public void AddSimpleQuestion(SimpleQuestion question)
         {
             SimpleQuestions.Add(question);
         }
 
-        public void AddAnswerChoiceQuestion(AnswerChoiceQuestion question)
+        public void RemoveAt(int index)
         {
-            AnswerChoiceQuestions.Add(question);
+            if (index < ParameterQuestions.Count)
+            {
+                ParameterQuestions.RemoveAt(index);
+                return;
+            }
+            index = index - ParameterQuestions.Count;
+
+            if (index < AnswerChoiceQuestions.Count)
+            {
+                AnswerChoiceQuestions.RemoveAt(index);
+                return;
+            }
+
+            index = index - AnswerChoiceQuestions.Count;
+
+            if (index < SimpleQuestions.Count)
+            {
+                SimpleQuestions.RemoveAt(index);
+                return;
+            }
         }
     }
 }

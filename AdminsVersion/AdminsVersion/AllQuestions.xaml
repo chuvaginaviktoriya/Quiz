@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminsVersion"
         mc:Ignorable="d"
-        Title="AllQuestions" Height="450" Width="800">
+        Title="AllQuestions" Height="450" Width="850">
     <Grid Margin="20">
-        <ListBox Name="Questions" HorizontalAlignment="Center" Height="360" Margin="0,0,0,0" VerticalAlignment="Top" Width="701"/>
+        <ListBox Name="Questions" HorizontalAlignment="Center" Height="264" Margin="26,41,26,0" VerticalAlignment="Top" Width="700" PreviewKeyDown="Questions_PreviewKeyDown"/>
+        <ComboBox Name="Topics" HorizontalAlignment="Center" Margin="-100,0,0,0" VerticalAlignment="Top" Width="600"/>
+        <Button Name="Show" Content="Показать" HorizontalAlignment="Center" Margin="625,0,0,0" VerticalAlignment="Top" Width="75" Click="Show_Click"/>
+        <Button Name ="Save" Content="Закрыть" HorizontalAlignment="Right" Margin="0,348,100,0" VerticalAlignment="Top" Width="75" Click="Save_Click"/>
 
     </Grid>
 </Window>

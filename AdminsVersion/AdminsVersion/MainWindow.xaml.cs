@@ -54,7 +54,8 @@ namespace AdminsVersion
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var allQuestions = new AllQuestions(Topics);
+            var allQuestions = new AllQuestions(ref Topics);
+
             allQuestions.ShowDialog();
                     
         }
