@@ -25,7 +25,7 @@ namespace CodeExecution.Test
             var inputArray = new object[] { a };
 
             Code code;
-            CodeCreation.TryCreateCode(func, out code);
+            CodeCreation.TryCreateCode(func, out code, out var errors);
 
             var actual = code.GetSolution(inputArray);
 
@@ -55,7 +55,7 @@ namespace CodeExecution.Test
             var inputArray = new object[] { x };
 
             Code code;
-            CodeCreation.TryCreateCode(func, out code);
+            CodeCreation.TryCreateCode(func, out code, out var errors);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected.ToString(), actual);
@@ -78,7 +78,7 @@ namespace CodeExecution.Test
             var inputArray = new object[] { a, b };
 
             Code code;
-            CodeCreation.TryCreateCode(func, out code);
+            CodeCreation.TryCreateCode(func, out code, out var errors);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected.ToString(), actual);
@@ -105,7 +105,7 @@ namespace CodeExecution.Test
             var inputArray = new object[] { array };
 
             Code code;
-            CodeCreation.TryCreateCode(func, out code);
+            CodeCreation.TryCreateCode(func, out code, out var errors);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected.ToString(), actual);
@@ -129,7 +129,7 @@ namespace CodeExecution.Test
             var inputArray = new object[] { array };
 
             Code code;
-            CodeCreation.TryCreateCode(func, out code);
+            CodeCreation.TryCreateCode(func, out code, out var errors);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected, actual);
@@ -174,7 +174,7 @@ namespace CodeExecution.Test
             var inputArray = new object[] { array };
 
             Code code;
-            CodeCreation.TryCreateCode(func, out code);
+            CodeCreation.TryCreateCode(func, out code, out var errors);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected.ToString(), actual);
@@ -198,7 +198,7 @@ namespace CodeExecution.Test
             var inputArray = new object[] { word };
 
             Code code;
-            CodeCreation.TryCreateCode(func, out code);
+            CodeCreation.TryCreateCode(func, out code, out var errors);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected, actual);
@@ -221,7 +221,7 @@ namespace CodeExecution.Test
             var inputArray = new object[] { word, index };
 
             Code code;
-            CodeCreation.TryCreateCode(func, out code);
+            CodeCreation.TryCreateCode(func, out code, out var errors);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected.ToString(), actual);
@@ -245,7 +245,7 @@ namespace CodeExecution.Test
             var inputArray = new object[] { new int[] {1,2} };
 
             Code code;
-            CodeCreation.TryCreateCode(func, out code);
+            CodeCreation.TryCreateCode(func, out code, out var errors);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected, actual);
@@ -270,7 +270,7 @@ namespace CodeExecution.Test
             var inputArray = new object[] { new int[] { 1, 2 } };
 
             Code code;
-            CodeCreation.TryCreateCode(func, out code);
+            CodeCreation.TryCreateCode(func, out code, out var errors);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected, actual);
@@ -291,7 +291,7 @@ namespace CodeExecution.Test
             var expected = "Адресат вызова создал исключение.";
 
             Code code;
-            CodeCreation.TryCreateCode(func, out code);
+            CodeCreation.TryCreateCode(func, out code, out var errors);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected, actual);
@@ -313,7 +313,7 @@ namespace CodeExecution.Test
             var expected = "Несоответствие числа параметров.";
 
             Code code;
-            CodeCreation.TryCreateCode(func, out code);
+            CodeCreation.TryCreateCode(func, out code, out var errors);
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected, actual);
@@ -336,7 +336,7 @@ namespace CodeExecution.Test
             var secondInputArray = new object[] { 4, 9 };
 
             Code code;
-            CodeCreation.TryCreateCode(func, out code);
+            CodeCreation.TryCreateCode(func, out code, out var errors);
             var firstActual = code.GetSolution(firstInputArray);
             var secondActual = code.GetSolution(secondInputArray);
 
