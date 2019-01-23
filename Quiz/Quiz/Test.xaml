@@ -6,11 +6,21 @@
         xmlns:local="clr-namespace:Quiz"
         mc:Ignorable="d"
         Title="Questions" Height="350" Width="800" WindowStartupLocation="CenterScreen" MinWidth="700">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Purple.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <TextBlock Name ="QuestionStatement" HorizontalAlignment="Center" Margin="0,62,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Height="88" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
         <TextBox Name ="StudentsAnswer" HorizontalAlignment="Center" Height="23" Margin="0,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" RenderTransformOrigin="0.185,0.372"/>
         <ListBox Name ="Variants" HorizontalAlignment="Center" Height="100" Margin="0,150,0,0" VerticalAlignment="Top" Width="600" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-        <Button Name ="Next" Content="Дальше" HorizontalAlignment="Center" Margin="520,270,0,0" VerticalAlignment="Top" Width="75" Click="Next_Click"/>
+        <Button Name ="Next" Content="Дальше" HorizontalAlignment="Center" Margin="500,270,0,0" VerticalAlignment="Top" Width="108" Click="Next_Click"/>
 
     </Grid>
 </Window>

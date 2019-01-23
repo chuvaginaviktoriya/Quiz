@@ -11,7 +11,7 @@ namespace Quiz
         public MainWindow()
         {
             InitializeComponent();
-
+            
             _topics = BinarySaver.LoadFromBinnary();
 
             foreach (var topic in _topics)
