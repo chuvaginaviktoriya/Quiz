@@ -6,8 +6,8 @@ namespace CodeExecution
     [Serializable]
     public class Statement
     {
-        public List<string> Text { get; private set; }
-        public List<Limit> Limits { get; private set; } 
+        public List<string> Text { get; }
+        public List<Limit> Limits { get; } 
 
         public Statement(List<string> text, List<Limit> limits)
         {

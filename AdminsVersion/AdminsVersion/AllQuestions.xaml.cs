@@ -20,7 +20,7 @@ namespace AdminsVersion
                 Topics.Items.Add(topic.Title);
         }
 
-        private void Show_Click(object sender, RoutedEventArgs e)
+        private void ShowQuestions_Click(object sender, RoutedEventArgs e)
         {
             Questions.Items.Clear();
 
@@ -74,7 +74,7 @@ namespace AdminsVersion
             if (e.Key == Key.Delete)
             {
                 _topics[_currentTopic].RemoveAt(index);
-                Show_Click(sender, e);
+                ShowQuestions_Click(sender, e);
             }
         }
     }

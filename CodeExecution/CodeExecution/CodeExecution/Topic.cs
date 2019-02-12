@@ -6,7 +6,7 @@ namespace CodeExecution
     [Serializable]
     public class Topic
     {
-        public string Title { get; private set; }
+        public string Title { get; }
         public List<ParameterQuestion> ParameterQuestions { get; private set; }
         public List<SimpleQuestion> SimpleQuestions { get; private set; }
         public List<AnswerChoiceQuestion> AnswerChoiceQuestions { get; private set; }

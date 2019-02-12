@@ -4,11 +4,11 @@ using System.Collections.Generic;
 namespace CodeExecution
 {
     [Serializable]
-    public class AnswerChoiceQuestion : Question
+    public class AnswerChoiceQuestion : IQuestion
     {
-        private string _statement;
-        private List<string> _variants;
-        private int _answer;
+        private readonly string _statement;
+        private readonly List<string> _variants;
+        private readonly int _answer;
 
         public AnswerChoiceQuestion(string statement, List<string> variants, int answer)
         {

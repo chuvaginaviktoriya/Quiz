@@ -249,32 +249,7 @@ namespace CodeExecution.Test
             var actual = code.GetSolution(inputArray);
 
             Xunit.Assert.Equal(expected, actual);
-        }
-
-        [Fact]
-        public void MethodWithNumerics_SuccessfulExecution()
-        {
-            var expected = "952";
-            var func =
-                @"public static class Execution
-                  {
-                    public static int Main(int[] users)
-                    {
-                        var bigInt = new BigInteger(934157136952);
-                        var result = (int) (bigInt % 1000);
-
-                        return result;
-                    }
-                  }";
-
-            var inputArray = new object[] { new int[] { 1, 2 } };
-
-            Code code;
-            CodeCreation.TryCreateCode(func, out code, out var errors);
-            var actual = code.GetSolution(inputArray);
-
-            Xunit.Assert.Equal(expected, actual);
-        }
+        }    
 
         [Fact]
         public void MethodWithExeptiomMessageInInvokation_ExeptionMessage()

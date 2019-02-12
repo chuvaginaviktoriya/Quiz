@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AdminsVersion"
         mc:Ignorable="d"
         Title="Добавление вопроса" Height="500" Width="680" MinWidth="680" MinHeight="500" WindowStartupLocation="CenterScreen">
     <Grid  Margin="10">
@@ -13,11 +12,25 @@
         </Grid.ColumnDefinitions>
 
         <TextBox Name="Code" AcceptsReturn="True" HorizontalAlignment="Center" Height="219" Margin="0,127,0,0" TextWrapping="Wrap" Text="Код программы" VerticalAlignment="Top" Width="280" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="0"/>
-        <TextBox Name ="Text" AcceptsReturn="True" HorizontalAlignment="Center" Height="68" Width="620" Margin="0,40,0,0" TextWrapping="Wrap" Text="Вопрос" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2" GotKeyboardFocus="TextBox_GotKeyboardFocus"/>
+        <TextBox Name ="Text" AcceptsReturn="True" HorizontalAlignment="Center" Height="68" Width="620" Margin="0,40,0,0" TextWrapping="Wrap" Text="Вопрос" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2"
+                 Grid.Column="0" GotKeyboardFocus="TextBox_GotKeyboardFocus">
+            <TextBox.ToolTip>
+                <ToolTip>
+                    Введите вопрос и поставьте # вместо чисел, которые будут генерироваться 
+                </ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
         <Button Name ="Add" Content="Создать" HorizontalAlignment="Center" Margin="-150,0,0,50" VerticalAlignment="Bottom" Width="75" Click="Add_Click" Grid.Column="1"/>
         <Button Name ="Cancel" Content="Отменить" HorizontalAlignment="Center" Margin="150,0,0,50" VerticalAlignment="Bottom" Width="75" Click="Cancel_Click" Grid.Column="1"/>
-        <ComboBox Name ="Topics" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="620" Grid.ColumnSpan="2"/>
-        <ListBox Name ="Limits" HorizontalAlignment="Center" Height="171" Margin="0,175,0,0" VerticalAlignment="Top" Width="300" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="1"/>
+        <ComboBox Name ="Topics" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="620" Grid.ColumnSpan="2"
+                  Grid.Column="0" />
+        <ListBox Name ="Limits" HorizontalAlignment="Center" Height="171" Margin="0,175,0,0" VerticalAlignment="Top" Width="300" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="1" KeyUp="Limits_KeyUp">
+            <ListBox.ToolTip>
+                <ToolTip>
+                Выделите интервал и нажмите "Delete" для его удаления
+                </ToolTip>
+            </ListBox.ToolTip>
+        </ListBox>
         <Button Name = "AddLimit" Content="Добавить" HorizontalAlignment="Center" Margin="150,127,0,0" VerticalAlignment="Top" Height="25" Width="100" Click="AddLimit_Click" Grid.Column="1"/>
         <TextBox x:Name="Min" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="32,128,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60" PreviewTextInput="PreviewTextInput" />
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="13,136,0,0" TextWrapping="Wrap" Text="От" VerticalAlignment="Top"/>

@@ -3,10 +3,10 @@
 namespace CodeExecution
 {
     [Serializable]
-    public class SimpleQuestion : Question
+    public class SimpleQuestion : IQuestion
     {
-        private string _statement;
-        private string _answer;
+        private readonly string _statement;
+        private readonly string _answer;
 
         public SimpleQuestion(string statement, string answer)
         {

@@ -7,20 +7,17 @@ namespace CodeExecution
     {
         public static bool TryCreateParameterQuestion(string code, string text, List<Limit> limits, out ParameterQuestion question, out CompilerErrorCollection errors)
         {
-            if (!CodeCreation.TryCreateCode(code, out Code compieledCode, out errors))
+            var isCodeValid = CodeCreation.TryCreateCode(code, out var compieledCode, out errors);
+            var isTextValid = StatementCreation.TryCreateStatement(text, limits, out var statement);
+
+            if (isCodeValid && isTextValid)
             {
-                question = null;
-                return false;
+                question = new ParameterQuestion(compieledCode, statement);
+                return true;
             }
 
-            if (!StatementCreation.TryCreateStatement(text, limits, out Statement statement))
-            {
-                question = null;
-                return false;
-            }
-
-            question = new ParameterQuestion(compieledCode, statement);
-            return true;
+            question = null;
+            return false;
         }
 
         public static SimpleQuestion CreateSimpleQuestion(string text, string answer)

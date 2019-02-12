@@ -1,25 +1,21 @@
 ﻿using System;
 using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 
 namespace CodeExecution
 {
     [Serializable]
     public class Code
     {
-        private string _typeName = "Execution";
-        private string _methodName = "Main";
+        private const string TypeName = "Execution";
+        private const string MethodName = "Main";
+
         private CompilerParameters _compilerParameters;
-        private string _sourceCode;
+        private readonly string _sourceCode;
 
-        [NonSerialized]
-        private System.Reflection.Assembly _assembly = null;
-
-        public Code(string sourceCode, CompilerParameters parameters)
+        public Code(string sourceCode)
         {
             _sourceCode = sourceCode;
-            _compilerParameters = parameters;
         }
 
         public bool IsCodeValid(out CompilerErrorCollection list)
@@ -35,26 +31,46 @@ namespace CodeExecution
 
         }
 
+        private static CompilerParameters GetParameters()
+        {
+            var parameters = new CompilerParameters()
+            {
+                IncludeDebugInformation = true
+            };
+
+            var currentDirrectory = Directory.GetCurrentDirectory();
+
+            if (Directory.Exists(currentDirrectory + "\\Assemblies"))
+            {
+                string[] paths = Directory.GetFiles(currentDirrectory + "\\Assemblies");
+
+                foreach (var path in paths)
+                    if (path.IndexOf(".dll") != -1)
+                        parameters.ReferencedAssemblies.Add(path);
+            }
+
+            return parameters;
+        }
+
         private CompilerResults CompileSourceCode()
         {
-            var compiler = new Microsoft.CSharp.CSharpCodeProvider();
+            _compilerParameters = GetParameters();
+            var compiler = CodeDomProvider.CreateProvider("CSharp");
             return compiler.CompileAssemblyFromSource(_compilerParameters, _sourceCode);
         }
 
         public string GetSolution(object[] parameters)
         {
-            if (_assembly == null)
-            {
-                var compilerResults = CompileSourceCode();
-                _assembly = compilerResults.CompiledAssembly;
-            }
-            var type = _assembly.GetType(_typeName);
-            var method = type.GetMethod(_methodName);
-            string result = "";
+            var compilerResults = CompileSourceCode();
+            var assembly = compilerResults.CompiledAssembly;
+            var type = assembly.GetType(TypeName);
+            var method = type.GetMethod(MethodName);
+
+            var result = "";
 
             try
             {
-                result += method.Invoke(null, parameters).ToString();
+                result += method?.Invoke(null, parameters).ToString();
             }
             catch (Exception e)
             {

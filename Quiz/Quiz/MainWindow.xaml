@@ -5,31 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Quiz"
         mc:Ignorable="d"
-        Title="Quiz" Height="400" Width="800" WindowStartupLocation="CenterScreen" MinWidth="800">
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Purple.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="61*"/>
-            <ColumnDefinition Width="731*"/>
-        </Grid.ColumnDefinitions>
+        Title="Quiz" Height="400" Width="800" WindowStartupLocation="CenterScreen" MinWidth="800" >
+    <Grid Margin="0,30,0,0">
         <ComboBox Name ="Topics" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" Width="600" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Center" Margin="-400,29,0,0" TextWrapping="Wrap" TextAlignment="Left" Width ="200" Text="Выберите тему" VerticalAlignment="Top" Grid.Column="1"/>
         <TextBox Name ="Student" HorizontalAlignment="Center" Height="30" Margin="0,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Center" Margin="-400,120,0,0" TextWrapping="Wrap"  Width ="200" Text="Укажите фамилию" VerticalAlignment="Top" Grid.Column="1"/>
-        <Button Style="{StaticResource MaterialDesignRaisedButton}" Name ="Start" Content="Начать" HorizontalAlignment="Center" Margin="535.227,206,96,0" VerticalAlignment="Top" Width="100" Click="Start_Click" Grid.Column="1"/>
+        <Button Name ="Start" Content="Начать" HorizontalAlignment="Center" Margin="535.227,206,96,0" VerticalAlignment="Top" Width="100" Click="Start_Click" Grid.Column="1"/>
 
     </Grid>
 </Window>

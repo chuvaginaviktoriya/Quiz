@@ -7,11 +7,11 @@ namespace Quiz
 {
     public class CustomTopic
     {
-        public List<Question> Questions{ get; private set; }
+        public List<IQuestion> Questions{ get; private set; }
 
         public CustomTopic(Topic topic)
         {
-            Questions = new List<Question>();
+            Questions = new List<IQuestion>();
 
             foreach (var question in topic.ParameterQuestions)
                 Questions.Add(question);
@@ -29,7 +29,7 @@ namespace Quiz
     {
         private CustomTopic _topic;
         private int _currentIndex=-1;
-        private Question _currentQuestion;
+        private IQuestion _currentQuestion;
         private int _correctAnswers = 0;
 
         public float GetPercent()
@@ -54,7 +54,8 @@ namespace Quiz
             {
                 if (Variants.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Не выбран ответ");
+                    var message = new Message("Не выбран ответ");
+                    message.ShowDialog();
                     return;
                 }
                 studentsAnswer = Variants.Items[Variants.SelectedIndex].ToString();
@@ -64,11 +65,16 @@ namespace Quiz
 
             if (correctAnswer == studentsAnswer)
             {
-                MessageBox.Show("Правильно");
+                var message = new Message("Верно");
+                message.ShowDialog();
                 _correctAnswers++;
             }
 
-            else MessageBox.Show("Неверно");
+            else
+            {
+                var message = new Message("Неверно");
+                message.ShowDialog();
+            }
 
             ShowNextQuestion();
         }

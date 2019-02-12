@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.CodeDom.Compiler;
 using System.Linq;
 using System;
+using System.Windows.Input;
 
 namespace AdminsVersion
 {
@@ -32,18 +33,18 @@ namespace AdminsVersion
 
         public int GetTopic()
         {
-            return Topics.SelectedIndex; 
+            return Topics.SelectedIndex;
         }
 
         public string GetText()
         {
-            return Text.Text; 
+            return Text.Text;
         }
 
 
         public string GetCode()
         {
-            return Code.Text; 
+            return Code.Text;
         }
 
         public List<Limit> GetLimits()
@@ -54,19 +55,19 @@ namespace AdminsVersion
 
         private bool SuccessfulExecution(out CompilerErrorCollection errors)
         {
-            if (!QuastionCreation.TryCreateParameterQuestion(GetCode(), GetText(), GetLimits(), out var question, out errors))
-                return false;         
-            else return true;
+            return QuastionCreation.TryCreateParameterQuestion(GetCode(), GetText(), GetLimits(), out var question,
+                out errors);
         }
 
 
-        private void Return_Errors(CompilerErrorCollection errors)
+        private static void Return_Errors(CompilerErrorCollection errors)
         {
-            var message = "Ошибка компиляции"+ Environment.NewLine;
+            var message = "Ошибка компиляции" + Environment.NewLine;
             var compilerErrorList = errors.Cast<CompilerError>();
 
             foreach (var compilerError in compilerErrorList)
-                message += string.Format(Environment.NewLine + "line{0}: {1}", compilerError.Line- CodeCreation.UsingsCount, compilerError.ErrorText);
+                message += string.Format(Environment.NewLine + "line{0}: {1}",
+                    compilerError.Line - CodeCreation.UsingsCount, compilerError.ErrorText);
 
             MessageBox.Show(message);
         }
@@ -75,7 +76,7 @@ namespace AdminsVersion
         {
             if (Topics.SelectedIndex == -1)
                 MessageBox.Show("Не выбрана тема");
-            else if (Text.Text.Split('#').Length - 1 != Limits.Items.Count)
+            else if (new Regex("#").Matches(Text.Text).Count != Limits.Items.Count)
                 MessageBox.Show("Количество ограничений не корректно");
             else if (!SuccessfulExecution(out var errors))
                 Return_Errors(errors);
@@ -86,6 +87,13 @@ namespace AdminsVersion
         {
             int.TryParse(Min.Text, out var min);
             int.TryParse(Max.Text, out var max);
+
+            if (min >= max)
+            {
+                MessageBox.Show("Некорректный интервал");
+                return;
+            }
+
             _limits.Add(new Limit(min, max));
 
             Limits.Items.Add(Min.Text + "-" + Max.Text);
@@ -100,8 +108,7 @@ namespace AdminsVersion
 
         private void TextBox_GotKeyboardFocus(object sender, System.Windows.Input.KeyboardFocusChangedEventArgs e)
         {
-            TextBox txtBox = sender as TextBox;
-            if (txtBox.Text == "Вопрос")
+            if (sender is TextBox txtBox && txtBox.Text == "Вопрос")
                 txtBox.Text = string.Empty;
         }
 
@@ -110,11 +117,21 @@ namespace AdminsVersion
             e.Handled = !IsTextAllowed(e.Text);
         }
 
-
         private static bool IsTextAllowed(string text)
         {
-            var _regex = new Regex("[^0-9]+");
-            return !_regex.IsMatch(text);
+            var regex = new Regex("[^0-9]+");
+            return !regex.IsMatch(text);
+        }
+
+        private void Limits_KeyUp(object sender, KeyEventArgs e)
+        {
+            var index = Limits.SelectedIndex;
+
+            if (index!=-1 && e.Key == Key.Delete)
+            {
+                Limits.Items.RemoveAt(index);
+                _limits.RemoveAt(index);
+            }
         }
     }
 }

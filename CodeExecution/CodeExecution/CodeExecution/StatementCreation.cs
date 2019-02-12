@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace CodeExecution
 {
@@ -6,11 +7,10 @@ namespace CodeExecution
     {
         public static bool TryCreateStatement(string text, List<Limit> questionLimits, out Statement statement)
         {
-            var questionText = new List<string>();
+            text = " " + text + " ";
             var textParts = text.Split('#');
 
-            foreach (var part in textParts)
-                questionText.Add(part);          
+            var questionText = textParts.ToList();
 
             var isValidCount = questionText.Count - questionLimits.Count < 2 && questionText.Count - questionLimits.Count > 0;
 

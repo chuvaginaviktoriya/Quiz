@@ -4,12 +4,11 @@ using System.Collections.Generic;
 namespace CodeExecution
 {
     [Serializable]
-    public class ParameterQuestion:Question
+    public class ParameterQuestion:IQuestion
     {
-        public Code Code { get; private set; }
-        public Statement Statement { get; private set; }
-
-        public List<object> InputData { get; private set; }
+        public Code Code { get; }
+        public Statement Statement { get; }
+        public List<object> InputData { get; private set;}
 
         public ParameterQuestion(Code code, Statement statement)
         {
@@ -31,9 +30,10 @@ namespace CodeExecution
         public string GetStatement()
         {
             GenerateInputs();
+
             var result = Statement.Text[0];
 
-            for (int i=1; i<Statement.Text.Count;i++)
+            for (var i=1; i<Statement.Text.Count;i++)
             {
                 result += InputData[i-1];
                 result += Statement.Text[i];
